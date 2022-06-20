@@ -95,6 +95,6 @@
 
 @layer base {
     html {
-        @apply font-inter font-light;
+        @apply font-opensans font-light;
     }
 }

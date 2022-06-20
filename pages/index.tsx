@@ -4,16 +4,17 @@ import Image from 'next/image';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useAccount, useConnect } from 'wagmi';
 import { FairyIcon } from './../utils/icons';
+import { Screen1 } from '../components/Screen1';
+import { Screen2 } from '../components/Screen2';
 
 const Home: NextPage = () => {
-    const { data } = useAccount();
     const { isConnected } = useConnect();
 
-    const DisplayNameComp = () => {
-        if (isConnected && data) {
-            return <div>Your address is: {data.address}</div>;
+    const Screen = () => {
+        if (!isConnected) {
+            return <Screen1 />;
         } else {
-            return <></>;
+            return <Screen2 />;
         }
     };
 
@@ -41,27 +42,7 @@ const Home: NextPage = () => {
                 </div>
             </header>
             <main className="flex-grow p-4 w-3/5 mx-auto">
-                <div className="flex flex-row justify-center">
-                    <div className="w-64">{FairyIcon}</div>
-                    <div className="flex flex-col w-2/5 mx-auto">
-                        <div className="font-bitter font-semibold text-3xl">
-                            On-chain raffles made{' '}
-                            <span className="text-primary">fair</span>
-                        </div>
-                        <div className="font-xl">
-                            Connect your web3 wallet and create a fully on-chain
-                            raffle for your upcoming NFT project mint allowlist.
-                        </div>
-                        <div className="mt-8 flex flex-row justify-center">
-                            <div>
-                                <ConnectButton label="Create raffle" />
-                                <div className="font-light text-gray-500 font-opensans text-xs mt-2">
-                                    first 100 raffles for free
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <Screen />
             </main>
             {/* <footer className="p-4 ">Footer</footer> */}
         </div>
