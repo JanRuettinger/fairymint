@@ -4,13 +4,13 @@ import { ConnectButton } from '@rainbow-me/rainbowkit';
 export function Screen1() {
     return (
         <div className="flex flex-row justify-center">
-            <div className="w-64">{FairyIcon}</div>
-            <div className="flex flex-col w-2/5 mx-auto">
-                <div className="font-bitter font-semibold text-3xl">
+            <div className="md:w-64">{FairyIcon}</div>
+            <div className="flex flex-col w-full md:w-2/5 mx-auto">
+                <div className="font-bitter font-semibold text-md md:text-3xl">
                     On-chain raffles made{' '}
                     <span className="text-primary">fair</span>
                 </div>
-                <div className="font-xl">
+                <div className="text-sm md:text-xl">
                     Connect your web3 wallet and create a fully on-chain raffle
                     for your upcoming NFT project mint allowlist.
                 </div>

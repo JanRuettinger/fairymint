@@ -41,7 +41,7 @@ const Home: NextPage = () => {
                     />
                 </div>
             </header>
-            <main className="flex-grow p-4 w-3/5 mx-auto">
+            <main className="flex-grow p-4 w-4/5 md:w-3/5 mx-auto">
                 <Screen />
             </main>
             {/* <footer className="p-4 ">Footer</footer> */}
