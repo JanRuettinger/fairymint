@@ -11,6 +11,9 @@ module.exports = {
                 bitter: ['Bitter'],
                 opensans: ['OpenSans'],
             },
+            colors: {
+                primary: '#A1E7D1',
+            },
         },
     },
     plugins: [],
